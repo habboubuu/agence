@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand:wght@300;400;500;600;700&family=Ubuntu&family=Work+Sans:wght@200;400;500;600;700;800&display=swap');
+/* default parameter in css katkhali content mabadich mn jnab b7al site koora */
+.container{
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* small */
+
+@media (min-width: 768px) {
+    .container {
+        width: 750;
+    }
+}
+/* medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/*------  Variable  --------*/
+:root{
+    --main-color: #10cab7;
+    --secondary-color: #2c4755;
+    --section-background : #f6f6f6;
+}
+
+/* ======= Components ===== */
+.special-heading{
+    color: #ebeced;
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px; /* l7ruf ytlas9u */
+    margin: 0;
+}
+.special-heading + p{
+    margin: -30px 0 0; /* lfu9 limen lta7t  */
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+
+/* kandir responsiv l tele sghar */
+@media (max-width: 767px){
+    .special-heading{
+        font-size: 60px;
+    }
+    .special-heading + p{
+        margin-top: -20px;
+    }
+}
+/* ======= End Components ===== */
+
+/* ================== Start Header =====================*/
+/* default parameter in css  */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none; /* kat7ayd no9at */ 
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box; /* kaykhali l3anaser 3ANDHA NAFS SIZE*/
+}
+/*body{
+    background: #fefefe;
+}*/
+header{
+    width: 100%; /*ykhud l3ard kolu*/
+    height: 80px; /* headers yakhud 80% f tul  */
+    background: #ffffff;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between; /* nfar9u mabayn logo w 3nawin */
+    padding: 0 100px; /* l3anasir tba3d mn jnab  */
+}
+.logo img{
+    width: 80px;
+    cursor: pointer;
+}
+.hamburger{
+    display: none; /*kandru display none bach l3anser y7ayd mn mkan ta3u wmaytla3x b7ala drna delete */
+}
+.nav-bar ul{
+    display: flex; /* flex bach l3anaser tji hda ba3dha */
+}
+.nav-bar ul li a{
+    display: block;
+    color: #333;
+    font-size: 18px;
+    padding: 10px 25px; /* space byn l3anaser (padding masafa dakhiliya) */
+    /*border-radius: 50px;*/
+    transition: 0.2s;
+    margin: 0 5px;  /* space mn limen w liser (margin= masafa kharijiya) */
+}
+.nav-bar ul li a:hover{
+    /*color: #11101b;*/
+    /*background: #fefefe;*/
+    border-bottom: 2px solid #333;
+}
+/* kanf3lu l3nser li 3tinah class active */
+.nav-bar ul li a.active{
+    /*color: #11101b;*/
+    /*background: #fefefe;*/
+    border-bottom: 2px solid #333;
+}
+@media only screen and (max-width: 1320){
+    header {
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    header {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .hamburger{
+        display: block; /* kanta3y  mli sghart chacha*/ 
+        cursor: pointer;
+    }
+    .hamburger .line{
+        width: 30px;
+        height: 3px;
+        background: #333;
+        margin: 6px 0;
+    }
+    .nav-bar{
+        height: 0;
+        position: absolute; /* t7aru kay3ud bnsba lchacha  */
+        top: 80px; /* kandiro 3la hsab l9ad */
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: #ffffff;
+        transition: 0.2s;
+        overflow: hidden; /* fach maykunx tal3 mytrax pointer f souris  */
+        z-index: 1; /* bach bar tla3 fu9 landing page */
+
+
+    }
+    .nav-bar.active{
+        height: 450px; /* tul lkhdat navbar */
+    }
+
+    .nav-bar ul{
+        display: block;
+        width: fit-content; /* kay3ud content 9d mo7tawa likayn */
+        margin: 80px auto 0 auto;
+        align-items: center;
+        transition: 0.5;
+        opacity: 0;    /* opacity hiya mostwa dyal chafafiya katkhud 0 .1 .2 .3 .4 tal 1 */
+
+    }
+    .nav-bar.active ul{
+        opacity: 1;
+    }
+    .nav-bar ul li a{
+        margin-bottom: 12px; /* masafa kharijya mabayn l3anaser dakhel navbar */
+
+        
+    }
+}
+/* ================== End Header =====================*/
+
+/*============= Start Landing  ================*/
+.landing{
+    background-image: url(../landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 80px); /* 80 dyal header kay7ayd scroll */
+    position: relative;
+}
+.landing .intro-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%); /* kayji west 9d 9d*/
+    width: 320px; /* bach maytla3x p mdghout wyktab */
+    max-width: 100%; /* bach maytla3ch fchi container akhur */
+
+}
+.landing .intro-text h1{
+    margin: 0; /* f7al mat7aydx scroll mn height kayt7ayd mn hna */
+    font-weight: bold;
+    font-size: 50px;
+    color: var(--main-color);
+}
+
+.landing .intro-text p{
+    font-size: 19px;
+    line-height: 1.8;
+}
+/*=================  End Landing  =================*/
+
+/*======== Start Features Section ===========*/
+.features{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--section-background);
+}
+.features .container{
+    display: flex;
+    justify-content: center;
+}
+
+.features .feat{
+    padding: 20px;
+    text-align: center;
+}
+.features .feat i{
+    color: var(--main-color);
+}
+.features .feat h3{
+    font-weight: 700;
+    margin: 30px 0;
+}
+.features .feat p{
+    line-height: 1.8;
+    color: #777;
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 600px){
+    .features .container{
+        flex-direction: column;
+    }
+    .feat{
+        width: 100%
+    }
+}
+@media (min-width: 601px) and (max-width:768px){
+    .features .container{
+        flex-direction: column;
+    }.feat{
+        width: 100%;
+    }
+}
+/*======== End Features Section ===========*/
+
+/* ============== Start Services =========== */
+
+.services{
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+}
+.services .services-content{
+    display: flex;
+    gap: 30px;
+    margin-top: 100px; /* tab3ud mn 3nwan*/
+}
+.services .services-content .srv{
+    display: flex; /* icon katji jnb content */
+    margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 600px){
+    .services .services-content{
+        flex-direction: column;
+        max-width: 350px;
+    }
+    
+}
+.services .services-content .srv{
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+.services .services-content .srv i{
+    color: var(--main-color);
+    flex-basis: 60px; /* hsn mn width */
+}
+
+.services .services-content .srv .text{
+    flex: 1; /* katban partie text mzyan  wky3awnk bach t3ti 60px l i */
+}
+
+.services .services-content .srv h3{
+    margin: 0 0 20px;
+}
+.services .services-content .srv .text p{
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+.services .services-content .image{
+    text-align: center;
+    position: relative;
+}
+/* hna bach kan9adu dicore */
+.services .services-content .image::before{
+    content: "";
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    /*left: -50px;*/
+    position: absolute;
+    right: -45px;
+    z-index: -1;
+}
+
+.services .services-content .image img{
+    width: 260px;
+}
+
+/* kan7aydu tswira (bach makhserch f chachat sghira w mtwasta) fi 7alt lma9ass kan a9al mn 1199px */
+@media (max-width: 1199px){
+    .image-column{
+        display: none;
+    }
+}
+/* ============== End Services =========== */
+
+/* ==========  Start Portfolio Section  ========== */
+
+.portfolio{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--section-background);
+    display: flex;
+
+}
+.portfolio .portfolio-content {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    margin-top: 80px;
+}
+.portfolio .portfolio-content .card{
+    background-color: white;
+}
+
+.portfolio .portfolio-content .card img {
+    max-width: 100%; /* katjib content lblastu w kay3udo tsawr 9d9d */
+}
+.portfolio .portfolio-content .card .info{
+    padding: 20px;
+}
+
+.portfolio .portfolio-content .card .info h3{
+    margin: 0;
+}
+.portfolio .portfolio-content .card .info p{
+    margin-top: 10px;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0px;
+
+
+}
+@media only screen and (max-width: 600px){
+    .portfolio .portfolio-content{
+        flex-direction: column;
+    }
+    .card{
+        max-width: 300px;
+    }
+}
+@media (min-width: 601px) and (max-width:700px){
+    .portfolio .portfolio-content{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .card{
+        max-width: 300px;
+    }
+}
+/* ==========  End Portfolio Section  ========== */
+
+/* ========== Start About Section =============*/
+
+.about{
+    padding-top: 60px;
+    padding-bottom: calc(60px + 60px); /* kanzidu dik 60 bach tb9a swra tal3a b7al fi tsmim */
+}
+.about .about-content{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap; /* bach lcontent ila zadt katnzal lta7t */
+    justify-content: space-between;
+}
+
+.about .about-content .image{
+    position: relative;
+    width: 250px;
+    height: 375px;
+
+}
+
+.about .about-content .image::before{
+    content: "";
+    position: absolute;
+    background-color: #ebeced;
+    width: 100px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+.about .about-content .image::after{
+    top: -40px;
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    z-index: -1;
+    right: -150px;
+}
+.about .about-content .image img{
+    max-width: 100%;
+}
+.about .about-content .text{
+    flex-basis: calc(100% - 500px); /* flex basis bach l3naser ytwz3u hda ba3dyathum*/
+}
+.about .about-content .text p:first-of-type{
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+
+}
+.about .about-content .text hr{
+    width: 50%; /* ytla3 gha nass */
+    display: inline-block;
+    border-color: var(--main-color);
+
+}
+.about .about-content .text p:last-of-type{
+    line-height: 2;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* note: l first-of-type w last-of-type kaykhliwk tmayz bayn l3anaser
+lkanu mn nafs tag w fi section whda */
+
+
+
+
+@media (max-width:991px){
+    .about .about-content {
+        flex-direction: column;
+        text-align: center;
+
+    }
+}
+@media (max-width:991px){
+    .about .about-content .image::before,
+    .about .about-content .image::after{
+        display: none;
+    }
+}
+@media (max-width:991px){
+    .about .about-content .image{
+        margin: 0 auto 60px; /* margin mn fu9 0 , mn 3la lmn w liser auto , w mn ta7t 60px*/
+    }
+}
+/* ========== End About Section =============*/
+
+/* ============  Start Conact Section  ==============*/
+
+.contact{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--section-background);
+}
+/* 3awdna padding top w bottom bach ytzad space */
+.contact .info{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+.contact .info .label{
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+.contact .info .link{
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--main-color);
+    text-decoration: none;
+}
+.contact .info .social{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+.contact .info .social i{
+    margin-left: 10px;
+    color: var(--secondary-color);
+}
+
+@media (max-width: 767px){
+    .contact .info .lable,
+    .contact .info .link{
+        font-size: 25px;
+    }
+}
+/* ============  End Conact Section  ==============*/
+
+/*======= Start Footer =======*/
+.footer{
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 18px;
+}
+.footer span{
+    font-weight: bold;
+    color: var(--main-color);
+}
+/*======= End Footer =======*/
+
+/* Scroll Up*/
+#btn{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: none;
+    background: var(--main-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+    display: none;
+}
+/* scroll navbar */
+html{
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,27 @@
+
+
+step 1 : Normalize.css click install 
+creat file in css folder normalize.css
+link file in html  <link rel="stylesheet" href="css/normalize.css">
+sellect all thing in page  => past in file 
+=============================
+step 2 : google font : work sans
+extralight 200
+light 300
+regular 400
+medium 500
+semibold 600
+bold 700
+extrabold 800
+font-family: 'Work Sans', sans-serif;
+=============================
+step 3 : fontawesome 
+downloader web vrision free
+*extraxt folder 
+*copy folder webfont => past side folder css
+*open folder fontawesome/css/all.main => past in project/css
+add link in html =>  <link rel="stylesheet" href="css/all.min.css">
+=====================
+note: fhad l7ala jbna navbar mn 3andna mymknx ykhdm lina m3a normalize.css y3ni gha n7ayduh !
+
+website : https://habboubuu.github.io/html_css_js/
